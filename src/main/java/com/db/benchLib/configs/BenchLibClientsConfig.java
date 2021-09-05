@@ -38,7 +38,7 @@ public class BenchLibClientsConfig {
         String url = String.format("http://%s:%d/api/requests", host, port);
         return Feign.builder()
                 .client(new OkHttpClient())
-                .encoder(new FeignSpringFormEncoder())
+                .encoder(new GsonEncoder())
                 .decoder(new GsonDecoder())
                 .logger(new Slf4jLogger(RequestsServiceClient.class))
                 .logLevel(Logger.Level.FULL)

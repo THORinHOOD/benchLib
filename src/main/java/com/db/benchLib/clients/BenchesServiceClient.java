@@ -1,6 +1,5 @@
 package com.db.benchLib.clients;
 
-import com.db.benchLib.data.bench.Bench;
 import com.db.benchLib.data.bench.BenchDto;
 import com.db.benchLib.data.bench.BenchesNearResponse;
 import com.db.benchLib.data.bench.NewBenchDto;
@@ -24,9 +23,15 @@ public interface BenchesServiceClient {
                                         @Param("pageSize") int pageSize);
 
     @Headers({
-        "Content-Type: " + MediaType.MULTIPART_FORM_DATA_VALUE
+            "Content-Type: " + MediaType.APPLICATION_JSON_VALUE
     })
     @RequestLine("POST")
-    String addBench(@Param("photo") MultipartFile photo, @Param("bench") NewBenchDto bench);
+    String addBench(NewBenchDto bench);
+
+    @Headers({
+            "Content-Type: " + MediaType.IMAGE_PNG_VALUE
+    })
+    @RequestLine("POST /{id}/photo")
+    String addBenchPhoto(@Param("id") String id, byte[] photo);
 
 }
