@@ -15,4 +15,5 @@ public class RequestDto {
     private PointGeo location;
     private Map<String, String> properties;
     private RequestStatus requestStatus;
+    private String benchId;
 }

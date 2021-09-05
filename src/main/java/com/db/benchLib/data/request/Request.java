@@ -23,6 +23,7 @@ public class Request implements Serializable {
     private Map<String, String> properties;
     private Binary photo;
     private RequestStatus requestStatus;
+    private String benchId;
 
     public RequestDto toDto() {
         return RequestDto.builder()
@@ -30,6 +31,7 @@ public class Request implements Serializable {
                 .requestStatus(requestStatus)
                 .location(location)
                 .properties(properties)
+                .benchId(benchId)
                 .build();
     }
 

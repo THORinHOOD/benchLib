@@ -24,7 +24,7 @@ public class BenchLibClientsConfig {
         String url = String.format("http://%s:%d/api/benches", host, port);
         return Feign.builder()
                 .client(new OkHttpClient())
-                .encoder(new GsonEncoder())
+                .encoder(new FeignSpringFormEncoder())
                 .decoder(new GsonDecoder())
                 .logger(new Slf4jLogger(BenchesServiceClient.class))
                 .logLevel(Logger.Level.FULL)
@@ -34,11 +34,11 @@ public class BenchLibClientsConfig {
     @Bean
     @ConditionalOnProperty({"requestsService.host", "requestsService.port"})
     public RequestsServiceClient requestsService(@Value("${requestsService.host}") String host,
-                                               @Value("${requestsService.port}") int port) {
+                                                 @Value("${requestsService.port}") int port) {
         String url = String.format("http://%s:%d/api/requests", host, port);
         return Feign.builder()
                 .client(new OkHttpClient())
-                .encoder(new GsonEncoder())
+                .encoder(new FeignSpringFormEncoder())
                 .decoder(new GsonDecoder())
                 .logger(new Slf4jLogger(RequestsServiceClient.class))
                 .logLevel(Logger.Level.FULL)
