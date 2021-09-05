@@ -21,5 +21,13 @@ public class Bench implements Serializable {
     private PointGeo geometry;
     private Map<String, String> properties;
     private Binary photo;
+
+    public BenchDto toDto() {
+        return BenchDto.builder()
+                .geometry(geometry)
+                .id(id)
+                .properties(properties)
+                .build();
+    }
 }
 
