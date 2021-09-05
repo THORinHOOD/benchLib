@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+import org.bson.types.Binary;
 import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
@@ -13,13 +14,13 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class Bench implements Serializable {
+public class Request implements Serializable {
 
     @Id
     private String id;
 
-    private PointGeo geometry;
+    private PointGeo location;
     private Map<String, String> properties;
+    private Binary photo;
 
 }
-
