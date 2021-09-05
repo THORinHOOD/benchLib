@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.db</groupId>
 	<artifactId>benchLib</artifactId>
-	<version>0.0.15</version>
+	<version>0.0.16</version>
 	<name>benchLib</name>
 	<description>library</description>
 	<properties>

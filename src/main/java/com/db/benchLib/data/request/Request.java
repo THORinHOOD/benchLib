@@ -23,4 +23,14 @@ public class Request implements Serializable {
     private Map<String, String> properties;
     private Binary photo;
     private RequestStatus requestStatus;
+
+    public RequestDto toDto() {
+        return RequestDto.builder()
+                .id(id)
+                .requestStatus(requestStatus)
+                .location(location)
+                .properties(properties)
+                .build();
+    }
+
 }
