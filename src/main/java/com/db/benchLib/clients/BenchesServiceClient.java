@@ -4,8 +4,10 @@ import com.db.benchLib.data.bench.Bench;
 import com.db.benchLib.data.bench.BenchDto;
 import com.db.benchLib.data.bench.BenchesNearResponse;
 import com.db.benchLib.data.bench.NewBenchDto;
+import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
+import org.springframework.http.MediaType;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface BenchesServiceClient {
@@ -21,6 +23,9 @@ public interface BenchesServiceClient {
                                         @Param("radius") double radius, @Param("page") int page,
                                         @Param("pageSize") int pageSize);
 
+    @Headers({
+        "Content-Type: " + MediaType.MULTIPART_FORM_DATA_VALUE
+    })
     @RequestLine("POST")
     String addBench(@Param("photo") MultipartFile photo, @Param("bench") NewBenchDto bench);
 
