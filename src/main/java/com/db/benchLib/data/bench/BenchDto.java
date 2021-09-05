@@ -1,25 +1,19 @@
-package com.db.benchLib.data;
+package com.db.benchLib.data.bench;
 
+import com.db.benchLib.data.PointGeo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.annotation.Id;
 
-import java.io.Serializable;
 import java.util.Map;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @SuperBuilder
-public class Bench implements Serializable {
-
-    @Id
+public class BenchDto {
     private String id;
-
     private PointGeo geometry;
     private Map<String, String> properties;
-
 }
-

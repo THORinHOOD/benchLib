@@ -1,10 +1,8 @@
-package com.db.benchLib.data.dto;
+package com.db.benchLib.data.bench;
 
 
-import com.db.benchLib.data.BenchWithDistance;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.util.List;
@@ -14,7 +12,7 @@ import java.util.List;
 @SuperBuilder
 public class BenchesNearResponse {
 
-    private final List<BenchWithDistance> benches;
+    private final List<BenchInfoWithDistance> benches;
     private final int page;
     private final int pageSize;
     private final int pagesCount;
