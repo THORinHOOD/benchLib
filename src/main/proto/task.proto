@@ -10,7 +10,7 @@ message TaskGeo {
   map<string, string> properties = 3;
   bytes photo = 4;
   TaskStatus taskStatus = 5;
-  optional TaskResultDetails taskResultDetails = 6;
+  TaskResultDetails taskResultDetails = 6;
 }
 
 enum TaskStatus {
@@ -19,7 +19,7 @@ enum TaskStatus {
 }
 
 message TaskResultDetails {
-  optional string resultId = 1;
+  string resultId = 1;
   TaskResultStatus taskResultStatus = 2;
 }
 
