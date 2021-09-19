@@ -1,6 +1,6 @@
 syntax = "proto3";
 option java_multiple_files = true;
-package com.db.benchLib.proto.bench;
+package com.thorinhood.benchLib.proto.bench;
 
 import "common.proto";
 

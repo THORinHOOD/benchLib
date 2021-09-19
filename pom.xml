@@ -135,7 +135,7 @@
 					</pluginArtifact>
 					<pluginId>grpc-java</pluginId>
 					<outputDirectory>
-						${project.basedir}/src/main/java/com/db/benchLib
+						${project.basedir}/src/main/java/
 					</outputDirectory>
 				</configuration>
 				<executions>
