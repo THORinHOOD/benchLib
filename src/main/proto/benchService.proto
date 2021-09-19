@@ -6,7 +6,7 @@ import "common.proto";
 import "bench.proto";
 
 service BenchService {
-  rpc findBenchById(common.FindByStringIdRequest) returns (bench.BenchInfo);
+  rpc getBenchById(common.FindByStringRequest) returns (bench.BenchInfo);
   rpc findBenchesNear(FindBenchesNearRequest) returns (FindBenchesNearResponse);
   rpc addBench(AddBenchRequest) returns (AddBenchResponse);
 }

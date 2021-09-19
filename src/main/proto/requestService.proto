@@ -1,0 +1,21 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.thorinhood.benchLib.proto.services;
+
+import "common.proto";
+import "task.proto";
+
+service TaskService {
+  rpc addTaskGeo(AddTaskGeoRequest) returns (AddTaskGeoResponse);
+  rpc getTaskGeoById(common.FindByStringRequest) returns (task.TaskGeo);
+}
+
+message AddTaskGeoRequest {
+  common.Location location = 1;
+  map<string, string> properties = 2;
+  bytes photo = 3;
+}
+
+message AddTaskGeoResponse {
+  string id = 1;
+}

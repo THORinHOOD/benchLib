@@ -2,7 +2,7 @@ syntax = "proto3";
 option java_multiple_files = true;
 package com.thorinhood.benchLib.proto.common;
 
-message FindByStringIdRequest {
+message FindByStringRequest {
   string id = 1;
 }
 
