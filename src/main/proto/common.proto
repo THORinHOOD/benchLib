@@ -1,0 +1,23 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.db.benchLib.proto.common;
+
+message FindByStringIdRequest {
+  string id = 1;
+}
+
+message Location {
+  double lat = 1;
+  double lon = 2;
+}
+
+message PageInfo {
+  uint32 index = 1;
+  uint32 size = 2;
+}
+
+message PaginationInfo {
+  PageInfo pageInfo = 1;
+  uint32 pagesCount = 2;
+  uint32 elementsCount = 3;
+}

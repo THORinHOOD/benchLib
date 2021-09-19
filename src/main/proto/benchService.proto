@@ -1,0 +1,36 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.db.benchLib.proto.services;
+
+import "common.proto";
+import "bench.proto";
+
+service BenchService {
+  rpc findBenchById(common.FindByStringIdRequest) returns (bench.BenchInfo);
+  rpc findBenchesNear(FindBenchesNearRequest) returns (FindBenchesNearResponse);
+  rpc addBench(AddBenchRequest) returns (AddBenchResponse);
+}
+
+message FindBenchesNearRequest {
+  double lon = 1;
+  double lat = 2;
+  double radius = 3;
+  common.PageInfo pageInfo = 4;
+}
+
+message FindBenchesNearResponse {
+  repeated bench.BenchInfoWithDistance benches = 1;
+  common.PaginationInfo paginationInfo = 2;
+  double radius = 3;
+  common.Location location = 4;
+}
+
+message AddBenchRequest {
+  common.Location location = 1;
+  map<string, string> properties = 2;
+  bytes photo = 3;
+}
+
+message AddBenchResponse {
+  string id = 1;
+}
