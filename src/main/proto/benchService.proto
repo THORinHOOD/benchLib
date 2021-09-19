@@ -6,16 +6,15 @@ import "common.proto";
 import "bench.proto";
 
 service BenchService {
-  rpc getBenchById(common.FindByStringRequest) returns (bench.BenchInfo);
+  rpc getBenchById(common.FindByStringRequest) returns (bench.BenchInfoWithPhoto);
   rpc findBenchesNear(FindBenchesNearRequest) returns (FindBenchesNearResponse);
   rpc addBench(AddBenchRequest) returns (AddBenchResponse);
 }
 
 message FindBenchesNearRequest {
-  double lon = 1;
-  double lat = 2;
-  double radius = 3;
-  common.PageInfo pageInfo = 4;
+  common.Location location = 1;
+  double radius = 2;
+  common.PageInfo pageInfo = 3;
 }
 
 message FindBenchesNearResponse {
