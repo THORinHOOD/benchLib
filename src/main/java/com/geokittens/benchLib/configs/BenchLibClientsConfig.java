@@ -1,9 +1,8 @@
-package com.db.benchLib.configs;
+package com.geokittens.benchLib.configs;
 
-import com.db.benchLib.clients.BenchesServiceClient;
-import com.db.benchLib.clients.RequestsServiceClient;
-import com.db.benchLib.utils.FeignSpringFormEncoder;
-import com.db.benchLib.utils.InMemoryMultipartFile;
+import com.geokittens.benchLib.clients.RequestsServiceClient;
+import com.geokittens.benchLib.utils.FeignSpringFormEncoder;
+import com.geokittens.benchLib.utils.InMemoryMultipartFile;
 import feign.Feign;
 import feign.Logger;
 import feign.codec.Decoder;
@@ -29,20 +28,6 @@ public class BenchLibClientsConfig {
 
     public BenchLibClientsConfig(ObjectFactory<HttpMessageConverters> messageConverters) {
         this.messageConverters = messageConverters;
-    }
-
-    @Bean
-    @ConditionalOnProperty({"benchesService.host", "benchesService.port"})
-    public BenchesServiceClient benchesService(@Value("${benchesService.host}") String host,
-                                               @Value("${benchesService.port}") int port) {
-        String url = String.format("http://%s:%d/api/benches", host, port);
-        return Feign.builder()
-                .client(new OkHttpClient())
-                .encoder(new FeignSpringFormEncoder())
-                .decoder(decoder())
-                .logger(new Slf4jLogger(BenchesServiceClient.class))
-                .logLevel(Logger.Level.FULL)
-                .target(BenchesServiceClient.class, url);
     }
 
     @Bean

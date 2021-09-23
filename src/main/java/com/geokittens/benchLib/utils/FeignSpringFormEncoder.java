@@ -1,4 +1,4 @@
-package com.db.benchLib.utils;
+package com.geokittens.benchLib.utils;
 
 import feign.RequestTemplate;
 import feign.codec.EncodeException;

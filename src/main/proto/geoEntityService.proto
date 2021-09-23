@@ -1,0 +1,51 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.geokittens.benchLib.proto.services;
+
+import "common.proto";
+import "geoEntity.proto";
+
+service GeoEntityService {
+  rpc getById(GetGeoEntityById) returns (geoentity.GeoEntity);
+  rpc getAllNear(GetAllNearRequest) returns (GetAllNearResponse);
+  rpc add(AddGeoEntityRequest) returns (AddGeoEntityResponse);
+  rpc delete(DeleteGeoEntityRequest) returns (common.ResponseStatus);
+  rpc update(geoentity.GeoEntity) returns (common.ResponseStatus);
+}
+
+message GetGeoEntityById {
+  string id = 1;
+}
+
+message DeleteGeoEntityRequest {
+  string id = 1;
+}
+
+message DeleteGeoEntitiesAllRequest {
+  repeated string ids = 1;
+}
+
+message GetAllNearRequest {
+  common.Location location = 1;
+  double radius = 2;
+  common.PageInfo pageInfo = 3;
+}
+
+message GetAllNearResponse {
+  repeated geoentity.GeoEntityDistanceInfo geoEntities = 1;
+  common.PaginationInfo paginationInfo = 2;
+  double radius = 3;
+  common.Location location = 4;
+}
+
+message AddGeoEntityRequest {
+  common.Location location = 1;
+  geoentity.GeoEntityType type = 2;
+  map<string, string> properties = 3;
+  bytes photo = 4;
+}
+
+message AddGeoEntityResponse {
+  common.ResponseStatus status = 1;
+  string id = 2;
+}

@@ -1,7 +1,7 @@
-package com.db.benchLib.configs;
+package com.geokittens.benchLib.configs;
 
-import com.db.benchLib.services.MultipartFileService;
-import com.db.benchLib.services.MultipartFileServiceImpl;
+import com.geokittens.benchLib.services.MultipartFileService;
+import com.geokittens.benchLib.services.MultipartFileServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

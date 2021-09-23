@@ -1,6 +1,6 @@
-package com.db.benchLib.data.request;
+package com.geokittens.benchLib.data.request;
 
-import com.db.benchLib.data.PointGeo;
+import com.geokittens.benchLib.data.PointGeo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;

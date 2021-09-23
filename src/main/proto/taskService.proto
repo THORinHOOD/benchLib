@@ -1,0 +1,33 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.geokittens.benchLib.proto.services;
+
+import "common.proto";
+import "task.proto";
+import "geoEntity.proto";
+
+service TaskService {
+  rpc add(AddTaskGeoRequest) returns (common.ResponseStatus);
+  rpc getById(GetTaskGeoByIdRequest) returns (task.TaskGeo);
+  rpc update(task.TaskGeo) returns (common.ResponseStatus);
+  rpc delete(DeleteTaskGeoByIdRequest) returns (common.ResponseStatus);
+}
+
+message AddTaskGeoRequest {
+  geoentity.GeoEntityType type = 1;
+  common.Location location = 2;
+  map<string, string> properties = 3;
+  bytes photo = 4;
+}
+
+message AddAllTasksGeoRequest {
+  repeated AddTaskGeoRequest requests = 1;
+}
+
+message GetTaskGeoByIdRequest {
+  string id = 1;
+}
+
+message DeleteTaskGeoByIdRequest {
+  string id = 1;
+}

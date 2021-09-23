@@ -1,9 +1,14 @@
 syntax = "proto3";
 option java_multiple_files = true;
-package com.thorinhood.benchLib.proto.common;
+package com.geokittens.benchLib.proto.common;
 
-message FindByStringRequest {
-  string id = 1;
+message ResponseStatus {
+  bool success = 1;
+  string message = 2;
+}
+
+message ResponseStatuses {
+  map<string, ResponseStatus> statuses = 1;
 }
 
 message Location {

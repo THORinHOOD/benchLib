@@ -1,19 +1,16 @@
-package com.db.benchLib.data.bench;
+package com.geokittens.benchLib.data.request;
 
-import com.db.benchLib.data.PointGeo;
+import com.geokittens.benchLib.data.PointGeo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.util.Map;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @SuperBuilder
-public class BenchDto {
-    private String id;
-    private PointGeo geometry;
+public class NewRequestDto {
+    private PointGeo location;
     private Map<String, String> properties;
 }

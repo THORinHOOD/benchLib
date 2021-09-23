@@ -1,4 +1,4 @@
-package com.db.benchLib.services;
+package com.geokittens.benchLib.services;
 
 import org.springframework.web.multipart.MultipartFile;
 

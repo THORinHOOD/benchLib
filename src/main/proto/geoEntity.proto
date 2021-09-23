@@ -1,0 +1,32 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.geokittens.benchLib.proto.geoentity;
+
+import "common.proto";
+
+message GeoEntityInfo {
+  string id = 1;
+  GeoEntityType type = 2;
+  common.Location location = 3;
+  map<string, string> properties = 4;
+}
+
+message GeoEntity {
+  GeoEntityInfo info = 1;
+  bytes photo = 2;
+}
+
+message GeoEntityDistanceInfo {
+  GeoEntityInfo info = 1;
+  double distance = 2;
+}
+
+message GeoEntityDistance {
+  GeoEntityInfo info = 1;
+  double distance = 2;
+  bytes photo = 3;
+}
+
+enum GeoEntityType {
+  BENCH = 0;
+}

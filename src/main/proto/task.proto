@@ -1,16 +1,18 @@
 syntax = "proto3";
 option java_multiple_files = true;
-package com.thorinhood.benchLib.proto.task;
+package com.geokittens.benchLib.proto.task;
 
 import "common.proto";
+import "geoEntity.proto";
 
 message TaskGeo {
   string id = 1;
-  common.Location location = 2;
-  map<string, string> properties = 3;
-  bytes photo = 4;
-  TaskStatus taskStatus = 5;
-  TaskResultDetails taskResultDetails = 6;
+  geoentity.GeoEntityType type = 2;
+  common.Location location = 3;
+  map<string, string> properties = 4;
+  bytes photo = 5;
+  TaskStatus taskStatus = 6;
+  TaskResultDetails taskResultDetails = 7;
 }
 
 enum TaskStatus {

@@ -1,7 +1,7 @@
-package com.db.benchLib.clients;
+package com.geokittens.benchLib.clients;
 
-import com.db.benchLib.data.request.NewRequestDto;
-import com.db.benchLib.data.request.RequestDto;
+import com.geokittens.benchLib.data.request.NewRequestDto;
+import com.geokittens.benchLib.data.request.RequestDto;
 import feign.Param;
 import feign.RequestLine;
 import org.springframework.web.multipart.MultipartFile;

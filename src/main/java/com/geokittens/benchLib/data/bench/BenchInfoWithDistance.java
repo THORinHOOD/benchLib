@@ -1,4 +1,4 @@
-package com.db.benchLib.data.bench;
+package com.geokittens.benchLib.data.bench;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
